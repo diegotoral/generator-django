@@ -70,6 +70,8 @@ DjangoGenerator.prototype.app = function app() {
   this.copy('_bower.json', 'bower.json');
   this.copy('_fabfile.py', 'fabfile.py');
   this.copy('_package.json', 'package.json');
+
+  this.copy('bins/watchmedo.sh', 'bins/watchmedo.sh');
 };
 
 DjangoGenerator.prototype.projectfiles = function projectfiles() {
