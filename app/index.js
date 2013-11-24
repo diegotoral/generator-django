@@ -28,10 +28,15 @@ DjangoGenerator.prototype.askFor = function askFor() {
     name: 'siteName',
     message: 'Whats the name of the website?',
     default: foldername
+  }, {
+    name: 'author',
+    message: 'Who is the creator?',
+    default: 'dummy'
   }];
 
   this.prompt(prompts, function (props) {
     this.siteName = props.siteName;
+    this.author = props.author;
 
     cb();
   }.bind(this));
@@ -63,6 +68,7 @@ DjangoGenerator.prototype.app = function app() {
 
   this.copy('_gitignore', '.gitignore');
   this.copy('_bower.json', 'bower.json');
+  this.copy('_fabfile.py', 'fabfile.py');
   this.copy('_package.json', 'package.json');
 };
 
