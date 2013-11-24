@@ -65,17 +65,23 @@ DjangoGenerator.prototype.app = function app() {
   this.mkdir('static/js');
   this.mkdir('static/css');
   this.mkdir('static/img');
-
-  this.copy('_gitignore', '.gitignore');
-  this.copy('_bower.json', 'bower.json');
-  this.copy('_fabfile.py', 'fabfile.py');
-  this.copy('_package.json', 'package.json');
-
-  this.copy('bins/watchmedo.sh', 'bins/watchmedo.sh');
 };
 
 DjangoGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
   this.copy('bowerrc', '.bowerrc');
+
+  this.copy('_gitignore', '.gitignore');
+  this.copy('_bower.json', 'bower.json');
+  this.copy('_fabfile.py', 'fabfile.py');
+  this.copy('_package.json', 'package.json');
+
+  // Copy 'bins' files.
+  this.copy('bins/watchmedo.sh', 'bins/watchmedo.sh');
+
+  // Copy 'requirements' files.
+  this.copy('requirements/common', 'requirements/COMMON');
+  this.copy('requirements/development', 'requirements/DEVELOPMENT');
+  this.copy('requirements/production', 'requirements/PRODUCTION');
 };
