@@ -3,6 +3,8 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
+var foldername = path.basename(process.cwd());
+
 
 var DjangoGenerator = module.exports = function DjangoGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -23,25 +25,45 @@ DjangoGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
 
   var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
+    name: 'siteName',
+    message: 'Whats the name of the website?',
+    default: foldername
   }];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    this.siteName = props.siteName;
 
     cb();
   }.bind(this));
 };
 
 DjangoGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
+  // Apps folder.
+  this.mkdir('apps');
 
-  this.copy('_package.json', 'package.json');
+  // Settings folder.
+  this.mkdir('settings');
+
+  // Requirements folder.
+  this.mkdir('requirements');
+
+  // Libs and bins folder.
+  this.mkdir('libs');
+  this.mkdir('bins');
+
+  // Templates folder.
+  this.mkdir('templates');
+  this.mkdir('templates/layout');
+
+  // Static files folder.
+  this.mkdir('static');
+  this.mkdir('static/js');
+  this.mkdir('static/css');
+  this.mkdir('static/img');
+
+  this.copy('_gitignore', '.gitignore');
   this.copy('_bower.json', 'bower.json');
+  this.copy('_package.json', 'package.json');
 };
 
 DjangoGenerator.prototype.projectfiles = function projectfiles() {
