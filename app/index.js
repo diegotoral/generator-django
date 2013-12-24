@@ -65,6 +65,7 @@ DjangoGenerator.prototype.app = function app() {
   this.mkdir('static/js');
   this.mkdir('static/css');
   this.mkdir('static/img');
+  this.mkdir('static/vendor');
 };
 
 DjangoGenerator.prototype.git = function git() {
