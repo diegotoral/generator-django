@@ -53,8 +53,8 @@ DjangoGenerator.prototype.app = function app() {
   this.mkdir('requirements');
 
   // Libs and bins folder.
+  this.mkdir('bin');
   this.mkdir('libs');
-  this.mkdir('bins');
 
   // Templates folder.
   this.mkdir('templates');
@@ -67,21 +67,36 @@ DjangoGenerator.prototype.app = function app() {
   this.mkdir('static/img');
 };
 
-DjangoGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
-  this.copy('bowerrc', '.bowerrc');
-
+DjangoGenerator.prototype.git = function git() {
   this.copy('_gitignore', '.gitignore');
+};
+
+DjangoGenerator.prototype.bower = function bower() {
+  this.copy('bowerrc', '.bowerrc');
   this.copy('_bower.json', 'bower.json');
-  this.copy('_fabfile.py', 'fabfile.py');
-  this.copy('_package.json', 'package.json');
+};
 
-  // Copy 'bins' files.
-  this.copy('bins/watchmedo.sh', 'bins/watchmedo.sh');
+DjangoGenerator.prototype.bin = function bin() {
+  this.copy('bin/watchmedo.sh', 'bin/watchmedo.sh');
+};
 
-  // Copy 'requirements' files.
+DjangoGenerator.prototype.requirements = function requirements() {
   this.copy('requirements/common', 'requirements/COMMON');
   this.copy('requirements/development', 'requirements/DEVELOPMENT');
   this.copy('requirements/production', 'requirements/PRODUCTION');
+};
+
+DjangoGenerator.prototype.settings = function settings() {
+  this.copy('init.py', 'settings/__init__.py');
+  this.copy('settings/_common.py', 'settings/common.py');
+  this.copy('settings/_development.py', 'settings/development.py');
+};
+
+DjangoGenerator.prototype.projectfiles = function projectfiles() {
+  this.copy('editorconfig', '.editorconfig');
+  this.copy('jshintrc', '.jshintrc');
+  this.copy('init.py', '__init__.py');
+
+  this.copy('_fabfile.py', 'fabfile.py');
+  this.copy('_package.json', 'package.json');
 };
