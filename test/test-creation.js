@@ -21,9 +21,30 @@ describe('django generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            // add files you expect to exist here.
+            // Dot files and others
+            '.bowerrc',
             '.jshintrc',
-            '.editorconfig'
+            '.gitignore',
+            '.editorconfig',
+            'package.json',
+            'bower.json',
+
+            // General Python files
+            '__init__.py',
+            'fabfile.py',
+
+            // Settings files
+            'settings/__init__.py',
+            'settings/common.py',
+            'settings/development.py',
+
+            // Bins
+            'bin/watchmedo.sh',
+
+            // Requirements files
+            'requirements/COMMON',
+            'requirements/DEVELOPMENT',
+            'requirements/PRODUCTION'
         ];
 
         helpers.mockPrompt(this.app, {
