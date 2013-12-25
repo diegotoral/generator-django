@@ -28,6 +28,7 @@ describe('django generator', function () {
             '.editorconfig',
             'package.json',
             'bower.json',
+            'README.md',
 
             // General Python files
             '__init__.py',

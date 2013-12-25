@@ -98,8 +98,8 @@ DjangoGenerator.prototype.settings = function settings() {
 DjangoGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
+  this.copy('_readme.md', 'README.md');
   this.copy('init.py', '__init__.py');
-
   this.copy('_fabfile.py', 'fabfile.py');
   this.copy('_package.json', 'package.json');
 };
