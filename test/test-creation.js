@@ -36,6 +36,7 @@ describe('django generator', function () {
             // Settings files
             'settings/__init__.py',
             'settings/common.py',
+            'settings/testing.py',
             'settings/development.py',
 
             // Bins

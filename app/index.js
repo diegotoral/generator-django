@@ -90,6 +90,7 @@ DjangoGenerator.prototype.requirements = function requirements() {
 DjangoGenerator.prototype.settings = function settings() {
   this.copy('init.py', 'settings/__init__.py');
   this.copy('settings/_common.py', 'settings/common.py');
+  this.copy('settings/_testing.py', 'settings/testing.py');
   this.copy('settings/_development.py', 'settings/development.py');
 };
 
