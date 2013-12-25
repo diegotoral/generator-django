@@ -83,6 +83,7 @@ DjangoGenerator.prototype.bin = function bin() {
 
 DjangoGenerator.prototype.requirements = function requirements() {
   this.copy('requirements/common', 'requirements/COMMON');
+  this.copy('requirements/testing', 'requirements/TESTING');
   this.copy('requirements/development', 'requirements/DEVELOPMENT');
   this.copy('requirements/production', 'requirements/PRODUCTION');
 };

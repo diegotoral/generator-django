@@ -44,6 +44,7 @@ describe('django generator', function () {
 
             // Requirements files
             'requirements/COMMON',
+            'requirements/TESTING',
             'requirements/DEVELOPMENT',
             'requirements/PRODUCTION'
         ];
