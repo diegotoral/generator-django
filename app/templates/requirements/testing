@@ -1,1 +1,2 @@
 -r COMMON
+django-nose==1.2
