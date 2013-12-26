@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os
 import sys
-import logging
 
 import django
 from path import path

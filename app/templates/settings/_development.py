@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
-from mongoengine import connect
 from <%= _.slugify(siteName) %>.settings.common import *
 
 
