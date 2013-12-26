@@ -30,6 +30,17 @@ DATABASES = {
 }
 
 ##################################################################
+# Test runner settings
+##################################################################
+
+# The name of the class to use for starting the test suite.
+TEST_RUNNER = 'testrunner.NoseCoverageTestRunner'
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+)
+
+##################################################################
 # Logging settings
 ##################################################################
 
