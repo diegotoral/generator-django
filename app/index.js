@@ -32,11 +32,15 @@ DjangoGenerator.prototype.askFor = function askFor() {
     name: 'author',
     message: 'Who is the creator?',
     default: 'dummy'
+  }, {
+    name: 'projectRepo',
+    message: 'Whats the repo clone URL?'
   }];
 
   this.prompt(prompts, function (props) {
     this.siteName = props.siteName;
     this.author = props.author;
+    this.projectRepo = props.projectRepo;
 
     cb();
   }.bind(this));
@@ -69,12 +73,12 @@ DjangoGenerator.prototype.app = function app() {
 };
 
 DjangoGenerator.prototype.git = function git() {
-  this.copy('_gitignore', '.gitignore');
+  this.template('_gitignore', '.gitignore');
 };
 
 DjangoGenerator.prototype.bower = function bower() {
   this.copy('bowerrc', '.bowerrc');
-  this.copy('_bower.json', 'bower.json');
+  this.template('_bower.json', 'bower.json');
 };
 
 DjangoGenerator.prototype.bin = function bin() {
@@ -90,16 +94,16 @@ DjangoGenerator.prototype.requirements = function requirements() {
 
 DjangoGenerator.prototype.settings = function settings() {
   this.copy('init.py', 'settings/__init__.py');
-  this.copy('settings/_common.py', 'settings/common.py');
-  this.copy('settings/_testing.py', 'settings/testing.py');
-  this.copy('settings/_development.py', 'settings/development.py');
+  this.template('settings/_common.py', 'settings/common.py');
+  this.template('settings/_testing.py', 'settings/testing.py');
+  this.template('settings/_development.py', 'settings/development.py');
 };
 
 DjangoGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
-  this.copy('_readme.md', 'README.md');
+  this.template('_readme.md', 'README.md');
   this.copy('init.py', '__init__.py');
-  this.copy('_fabfile.py', 'fabfile.py');
-  this.copy('_package.json', 'package.json');
+  this.template('_fabfile.py', 'fabfile.py');
+  this.template('_package.json', 'package.json');
 };
