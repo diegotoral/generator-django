@@ -1,3 +1,4 @@
 -r COMMON
 django-nose==1.2
 factory-boy==2.2.1
+watchdog==0.6.0
