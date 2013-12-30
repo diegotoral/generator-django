@@ -35,6 +35,7 @@ describe('django generator', function () {
             'fabfile.py',
 
             // Settings files
+            'settings/.gitignore',
             'settings/__init__.py',
             'settings/common.py',
             'settings/testing.py',
