@@ -87,6 +87,7 @@ LOGGING = {
 
 TESTING_APPS = (
     # Testing specific apps here
+    'django_nose',
 )
 
 INSTALLED_APPS = EXTERNAL_APPS + TESTING_APPS + INTERNAL_APPS
