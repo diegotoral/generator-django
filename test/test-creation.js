@@ -31,6 +31,7 @@ describe('django generator', function () {
             'README.md',
 
             // General Python files
+            'urls.py',
             '__init__.py',
             'fabfile.py',
 

@@ -104,6 +104,7 @@ DjangoGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
   this.template('_readme.md', 'README.md');
+  this.copy('urls.py', 'urls.py');
   this.copy('init.py', '__init__.py');
   this.template('_fabfile.py', 'fabfile.py');
   this.template('_package.json', 'package.json');
