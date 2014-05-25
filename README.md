@@ -1,4 +1,4 @@
-# generator-django [![Stories in Ready](https://badge.waffle.io/diegotoral/generator-django.png?label=ready&title=Ready)](https://waffle.io/diegotoral/generator-django) [![Build Status](https://secure.travis-ci.org/diegotoral/generator-django.png?branch=master)](https://travis-ci.org/diegotoral/generator-django)
+# generator-django [![Stories in Ready](https://badge.waffle.io/diegotoral/generator-django.png?label=ready&title=Ready)](https://waffle.io/diegotoral/generator-django) [![Build Status](https://secure.travis-ci.org/diegotoral/generator-django.png?branch=master)](https://travis-ci.org/diegotoral/generator-django) [![NPM version](https://badge.fury.io/js/generator-django.png)](http://badge.fury.io/js/generator-django)
 
 A generator for [Yeoman](http://yeoman.io).
 
