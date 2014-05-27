@@ -28,6 +28,9 @@ sys.path.append(LIBS_DIR)
 # Root URLs module
 ROOT_URLCONF = '<%= _.slugify(siteName) %>.urls'
 
+# WSGI application
+WSGI_APPLICATION = '<%= _.slugify(siteName) %>.wsgi.application'
+
 # Secret key
 # This is used to provide cryptographic signing, and should be set
 # to a unique, unpredictable value.

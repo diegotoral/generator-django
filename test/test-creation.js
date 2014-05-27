@@ -32,6 +32,7 @@ describe('django generator', function () {
 
             // General Python files
             'urls.py',
+            'wsgi.py',
             'manage.py',
             '__init__.py',
             'fabfile.py',
