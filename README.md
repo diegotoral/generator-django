@@ -11,11 +11,11 @@ To install generator-django from npm, run:
 $ npm install -g generator-django
 ```
 
-Then make a virtualenv and cd into it:
+Then make a virtualenv and activate it:
 
 ```
 $ virtualenv myproject --no-site-packages
-$ cd myproject
+$ source myproject/bin/activate
 ```
 
 Finally, make your project directory and initiate the generator:
