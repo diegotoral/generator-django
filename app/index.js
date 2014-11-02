@@ -35,12 +35,28 @@ DjangoGenerator.prototype.askFor = function askFor() {
   }, {
     name: 'projectRepo',
     message: 'Whats the repo clone URL?'
+  },{
+    name: 'djangoVersion',
+    message: 'Which version of Django would you like to use?',
+    type: 'list',
+    choices: [{
+        name: '1.5',
+        value: '>=1.5,<1.6'
+    }, {
+        name: '1.6',
+        value: '>=1.6,<1.7'
+    }, {
+        name: '1.7',
+        value: '>=1.7,<1.8'
+    }],
+    default: 2
   }];
 
   this.prompt(prompts, function (props) {
     this.siteName = props.siteName;
     this.author = props.author;
     this.projectRepo = props.projectRepo;
+    this.djangoVersion = props.djangoVersion;
 
     cb();
   }.bind(this));
@@ -86,7 +102,7 @@ DjangoGenerator.prototype.bin = function bin() {
 };
 
 DjangoGenerator.prototype.requirements = function requirements() {
-  this.copy('requirements/common', 'requirements/COMMON');
+  this.template('requirements/common', 'requirements/COMMON');
   this.copy('requirements/testing', 'requirements/TESTING');
   this.copy('requirements/development', 'requirements/DEVELOPMENT');
   this.copy('requirements/production', 'requirements/PRODUCTION');
