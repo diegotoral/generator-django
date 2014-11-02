@@ -3,7 +3,10 @@
   "version": "0.1.4",
   "description": "A generator for Yeoman",
   "keywords": [
-    "yeoman-generator", "django", "python", "yeoman"
+    "yeoman-generator",
+    "django",
+    "python",
+    "yeoman"
   ],
   "homepage": "https://github.com/diegotoral/generator-django",
   "bugs": "https://github.com/diegotoral/generator-django/issues",
@@ -24,7 +27,8 @@
     "yeoman-generator": "~0.14.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "sinon": "^1.11.1"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
