@@ -60,7 +60,7 @@ DjangoAppGenerator.prototype.addToSettings = function addToSettings() {
     var keyAtIndex = settingsContent.indexOf(key) + key.length;
     var idx = settingsContent.indexOf(')', keyAtIndex) - 1;
     // TODO find a way to find out what tabulation is being used
-    var newContent = (settingsContent.slice(0,idx) + ',\n' + tabulation + "'"+this.details.appName+"'" + settingsContent.slice(idx));
+    var newContent = (settingsContent.slice(0,idx) + '\n' + tabulation + "'"+this.details.appName+"'," + settingsContent.slice(idx));
     this.writeFileFromString(newContent, settingsFile);
   }
 }

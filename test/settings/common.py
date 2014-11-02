@@ -4,7 +4,7 @@ SECRET = 'djsalkdjaslk'
 
 INTERNAL_APPS = (
     'django',
-    'somegh'
+    'somegh',
 )
 
 DEBUG = True
