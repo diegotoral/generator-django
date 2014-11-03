@@ -316,9 +316,9 @@ DjangoModelGenerator.prototype['_makeFieldLong text'] = function (field) {
 DjangoModelGenerator.prototype['_makeFieldForeign key'] = function (field) {
   var type = 'ForeignKey';
   var params = [];
+  params.push("'"+field.key_model+"'");
   this._null(field, params);
   this._default(field, params);
-  params.push("'"+field.key_model+"'");
   if(field.related_name) {
     params.push("related_name='" + field.related_name + "'");
   }
@@ -327,9 +327,9 @@ DjangoModelGenerator.prototype['_makeFieldForeign key'] = function (field) {
 DjangoModelGenerator.prototype['_makeFieldMany to many'] = function (field) {
   var type = 'ManyToManyField';
   var params = [];
+  params.push("'"+field.key_model+"'");
   this._null(field, params);
   this._default(field, params);
-  params.push("'"+field.key_model+"'");
   if(field.related_name) {
     params.push("related_name='" + field.related_name + "'");
   }
