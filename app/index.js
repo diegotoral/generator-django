@@ -10,6 +10,8 @@ var foldername = path.basename(process.cwd());
 
 var DjangoGenerator = module.exports = function DjangoGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
+  // have Yeoman greet the user.
+  this.log(this.yeoman);
 
   this.on('end', function () {
     this.installDependencies({ skipInstall: options['skip-install'] });
