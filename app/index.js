@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var randomString = require('randomstring');
 
 var foldername = path.basename(process.cwd());
 
@@ -46,6 +47,10 @@ DjangoGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
+DjangoGenerator.prototype.createSecret = function createSecret() {
+    this.secret = randomString.generate(48);
+};
+
 DjangoGenerator.prototype.app = function app() {
   // Apps folder.
   this.mkdir('apps');
@@ -88,7 +93,7 @@ DjangoGenerator.prototype.bin = function bin() {
 DjangoGenerator.prototype.requirements = function requirements() {
   this.copy('requirements/common', 'requirements/COMMON');
   this.copy('requirements/testing', 'requirements/TESTING');
-  this.copy('requirements/development', 'requirements/DEVELOPMENT');
+  this.template('requirements/development', 'requirements/DEVELOPMENT');
   this.copy('requirements/production', 'requirements/PRODUCTION');
 };
 
