@@ -38,8 +38,6 @@ DjangoGenerator.prototype.checkVirtualenv = function checkVirtualenv() {
 DjangoGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
 
   var prompts = [{
     name: 'siteName',
