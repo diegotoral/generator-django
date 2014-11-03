@@ -29,7 +29,7 @@ DjangoGenerator.prototype.checkVirtualenv = function checkVirtualenv() {
     childProcess.exec(command, function(err, out){
         // TODO That's a rather dirty string check
         if(out === 'False\n') {
-            this.log(chalk.bold.yellow('WARNING - You are not in a virtual environment, it strongly advised that you activate a virtual environment before continuing'));
+            this.log(chalk.bold.yellow('WARNING - You are not in a virtual environment, it is strongly advised that you activate a virtual environment before continuing'));
         }
         done();
     }.bind(this));
