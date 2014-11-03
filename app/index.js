@@ -2,6 +2,8 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var childProcess = require('child_process');
+var chalk = require('chalk');
 
 var foldername = path.basename(process.cwd());
 
