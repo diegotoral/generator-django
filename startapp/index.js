@@ -47,7 +47,11 @@ DjangoAppGenerator.prototype.createFolder = function createFolder() {
     this.log('Create init file');
     this.copy('../../app/templates/init.py', this.appDir + '/__init__.py');
     this.copy('views.py', this.appDir + '/views.py');
-    this.copy('test_unit.py', this.appDir + '/test_unit.py');
+    this.mkdir(this.appDir + '/tests');
+    this.mkdir(this.appDir + '/tests/unit');
+    this.mkdir(this.appDir + '/tests/integration');
+    this.copy('test_unit.py', this.appDir + '/tests/integration/tests.py');
+    this.copy('test_unit.py', this.appDir + '/tests/unit/tests.py');
 }
 
 DjangoAppGenerator.prototype.addToSettings = function addToSettings() {

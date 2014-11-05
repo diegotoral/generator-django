@@ -28,7 +28,7 @@ describe('django model generator', function () {
         it('creates expected files', function (done) {
             var expected = [
                 'apps/'+appName+'/models.py',
-                'apps/'+appName+'/test_unit.py'
+                'apps/'+appName+'/tests/unit/tests.py'
             ];
             helpers.mockPrompt(this.app, {});
             this.app.on('end', function() {

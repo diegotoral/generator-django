@@ -32,7 +32,8 @@ describe('django app generator', function () {
             var expected = [
                 'apps/harlo/__init__.py',
                 'apps/harlo/views.py',
-                'apps/harlo/test_unit.py'
+                'apps/harlo/tests/unit/tests.py',
+                'apps/harlo/tests/integration/tests.py',
             ];
 
             helpers.mockPrompt(this.app, {

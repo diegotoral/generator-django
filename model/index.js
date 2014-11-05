@@ -10,7 +10,7 @@ var DjangoModelGenerator = module.exports = function DjangoModelGenerator(args, 
   yeoman.generators.Base.apply(this, arguments);
   this.appDir = 'apps/' + args[0];
   this.modelFile = this.appDir + '/models.py';
-  this.testFile = this.appDir + '/test_unit.py';
+  this.testFile = this.appDir + '/tests/unit/tests.py';
   this.on('end', function () {
   });
   this.model = {
