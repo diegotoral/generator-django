@@ -25,6 +25,45 @@ $ mkdir myproject && cd myproject
 $ yo django
 ```
 
+
+## Generators
+
+Available generators:
+
+* django
+* startapp
+* model
+
+**Note: Generators are to be run from the root directory of your app.**
+
+### Django
+
+Sets up a new Django project.
+
+Example:
+```sh
+$ yo django
+```
+
+### Startapp
+
+Sets up an app folder.
+
+Example:
+```sh
+$ yo django:startapp
+```
+
+### Model
+
+Generates a Django model for you.
+
+Example:
+```sh
+$ yo django:model
+```
+
+
 ## What do you get?
 
 You get the following directory structure:
@@ -59,6 +98,7 @@ You get the following directory structure:
     └── layout
 ```
 
+
 ## Contributing
 
 1. Fork it
@@ -66,6 +106,7 @@ You get the following directory structure:
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
+
 
 ## License
 
