@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var randomString = require('randomstring');
 
 var foldername = path.basename(process.cwd());
 
@@ -56,6 +57,10 @@ DjangoGenerator.prototype.askFor = function askFor() {
 
     cb();
   }.bind(this));
+};
+
+DjangoGenerator.prototype.createSecret = function createSecret() {
+    this.secret = randomString.generate(48);
 };
 
 DjangoGenerator.prototype.app = function app() {

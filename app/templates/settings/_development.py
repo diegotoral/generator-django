@@ -4,6 +4,12 @@ import logging
 from <%= _.slugify(siteName) %>.settings.common import *
 
 
+# Secret key
+# This is used to provide cryptographic signing, and should be set
+# to a unique, unpredictable value.
+SECRET_KEY = '<%= secret %>'
+
+
 ##################################################################
 # Debug settings
 ##################################################################
