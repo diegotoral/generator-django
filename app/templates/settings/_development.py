@@ -81,7 +81,7 @@ LOGGING = {
 ##################################################################
 
 DEVELOPMENT_APPS = (
-    # Development specific apps here
+    'debug_toolbar',
 )
 
 INSTALLED_APPS = EXTERNAL_APPS + DEVELOPMENT_APPS + INTERNAL_APPS
