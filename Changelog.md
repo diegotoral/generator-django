@@ -2,6 +2,10 @@ Changelog
 =========
 ---------
 
+## version 0.2.1
+
+- Added 'django-debug-toolbar' (thanks dbanck)
+
 ## version 0.2.0
 
 - Fix for issue [#47](https://github.com/diegotoral/generator-django/issues/47)
