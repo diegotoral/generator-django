@@ -175,23 +175,29 @@ DjangoGenerator.prototype.askRunpip = function askRunpip() {
   });
 };
 
-DjangoGenerator.prototype.runpip = function runpip() {
+DjangoGenerator.prototype._runPipInstall = function(requirements, cb) {
   var that = this;
+  that.log(chalk.green('Installing requirements for '+this.runpip));
+  console.log('I thought we re spying....');
+  var commandArgs = ['install', '-r', 'requirements/' + this.runpip];
+  var pi = childProcess.spawn( 'pip', commandArgs );
+  pi.stdout.on('data', function(data){
+    that.log(data.toString('utf-8'));
+  });
+  pi.on('close', function (code) {
+    if (code !== 0) {
+      that.log(chalk.bold.red('An error has occured during pip install'));
+    }
+    cb();
+  });
+  pi.on('error', cb);
+};
+
+DjangoGenerator.prototype.runpip = function runpip() {
+  console.log(this.runpip);
   if(this.runpip) {
     var cb = this.async();
-    that.log(chalk.green('Installing requirements for '+this.runpip))
-
-    var commandArgs = ['install', '-r', 'requirements/' + this.runpip];
-    var pi = childProcess.spawn( 'pip', commandArgs );
-    pi.stdout.on('data', function(data){
-      that.log(data.toString('utf-8'));
-    });
-    pi.on('close', function (code) {
-      if (code !== 0) {
-        that.log(chalk.bold.red('An error has occured during pip install'));
-      }
-      cb();
-    });
+    this._runPipInstall(this.runpip, cb);
   }
 };
 
