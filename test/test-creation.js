@@ -5,6 +5,7 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 var fs = require('fs');
 var assert = require('assert');
+var sinon = require('sinon');
 
 describe('django generator', function () {
     beforeEach(function (done) {
@@ -107,6 +108,62 @@ describe('django generator', function () {
         });
         it('puts the correct django version into COMMON for 1.7', function(done){
             testVersion.bind(this)('1.7', '>=1.7,<1.8', done);
+        });
+    });
+
+    describe.only('pip install', function() {
+        beforeEach(function (done) {
+            helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+                if (err) {
+                    return done(err);
+                }
+
+                this.app = helpers.createGenerator('django:app', [
+                    '../../app'
+                ]);
+                done();
+            }.bind(this));
+        });
+
+        it('does not call pip install when not asked to', function(done){
+            var that = this;
+            this.app._runPipInstall = sinon.spy();
+            helpers.mockPrompt(this.app, {
+                'djangoVersion': '1.7',
+                'runpip': "Don't run pip install"
+            });
+            this.app.run({}, function () {
+                assert.notEqual(true, that.app._runPipInstall.called);
+                done();
+            });
+        });
+
+        it('does not call pip install when asked to skip', function(done){
+            var that = this;
+            this.app._runPipInstall = sinon.stub().yields();
+            helpers.mockPrompt(this.app, {
+                'djangoVersion': '1.7',
+                'runpip': "COMMON",
+                skip: true
+            });
+            this.app.run({}, function () {
+                assert.notEqual(true, that.app._runPipInstall.called);
+                done();
+            });
+        });
+
+        it('calls pip install when asked to', function(done){
+            var that = this;
+            this.app._runPipInstall = sinon.stub().yields();
+            helpers.mockPrompt(this.app, {
+                'djangoVersion': '1.7',
+                'runpip': "COMMON",
+                skip: false
+            });
+            this.app.run({}, function () {
+                assert.equal(true, that.app._runPipInstall.called);
+                done();
+            });
         });
     });
 });
