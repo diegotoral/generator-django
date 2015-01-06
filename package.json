@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "randomstring": "^1.0.3",
+    "chalk": "^0.5.1",
     "yeoman-generator": "~0.14.0"
   },
   "devDependencies": {
