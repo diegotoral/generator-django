@@ -45,5 +45,9 @@
         $ bower install
 
     As you edit your `REQUIREMENTS` files, you can run those last commands again;
-    `pip` will realise which packages you've added and will ignore those already
+    `pip` will realize which packages you've added and will ignore those already
     installed.
+    
+## Running your app
+
+    python ./manage.py runserver
