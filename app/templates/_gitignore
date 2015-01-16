@@ -4,7 +4,7 @@
 node_modules
 
 ### Bower ###
-static/components
+static/vendor
 
 ### Django ###
 *.log
