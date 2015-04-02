@@ -3,6 +3,10 @@
 A generator for [Yeoman](http://yeoman.io).
 
 
+## Demo
+
+A demo application can be found [here](https://github.com/diegotoral/generator-django-demo).
+
 ## Getting Started
 
 To install generator-django from npm, run:
