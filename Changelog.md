@@ -2,6 +2,11 @@ Changelog
 =========
 ---------
 
+## version 0.2.3
+
+- Add link to demo project 
+- Fix 2 spaces indentation
+
 ## version 0.2.2
 
 - Upgrade Bower version
