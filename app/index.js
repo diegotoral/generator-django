@@ -77,6 +77,9 @@ DjangoGenerator.prototype.app = function app() {
   this.mkdir('bin');
   this.mkdir('libs');
 
+  // Dev db folder
+  this.mkdir('db');
+
   // Templates folder.
   this.mkdir('templates');
   this.mkdir('templates/layout');
