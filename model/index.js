@@ -80,6 +80,7 @@ DjangoModelGenerator.prototype.addFields = function addFields() {
         'Date - DateField - DATE',
         'Date and time - DateTimeField - DATETIME',
         'Time - TimeField - TIME',
+        'URL - URLField - VARCHAR',
       ]
     },
     {
@@ -168,6 +169,15 @@ DjangoModelGenerator.prototype.addFields = function addFields() {
       when: function(answers) {
         var t = getType(answers['fieldType'+that.fieldCount]);
         return that._.contains(['Date', 'Date and time', 'Time'], t);
+       }
+     },
+    {
+      name: 'max_length'+that.fieldCount,
+      message: 'max_length',
+      default: 200,
+      when: function(answers) {
+        var t = getType(answers['fieldType'+that.fieldCount]);
+        return that._.contains(['URL'], t);
       }
     }
     ];
@@ -290,6 +300,16 @@ DjangoModelGenerator.prototype._makeFieldText = function _makeFieldText(field) {
   params.push('max_length='+field.max_length);
   return this._makeField(field.name, type, params);
 };
+
+DjangoModelGenerator.prototype._makeFieldURL = function _makeFieldURL(field) {
+  var type = 'URLField';
+  var params = [];
+  this._null(field, params);
+  this._default(field, params);
+  params.push('max_length='+field.max_length);
+  return this._makeField(field.name, type, params);
+};
+
 
 DjangoModelGenerator.prototype._makeFieldSlug = function _makeFieldSlug(field) {
   var type = 'SlugField';

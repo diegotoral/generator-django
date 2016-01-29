@@ -55,6 +55,7 @@ describe('django model generator', function () {
     //     'Date - DateField - DATE',
     //     'Date and time - DateTimeField - DATETIME',
     //     'Time - TimeField - TIME',
+    //     'URL - URLField - VARCHAR'
     //   ]
 
     describe('field creation', function() {
@@ -134,7 +135,12 @@ describe('django model generator', function () {
                 'fieldType13': 'Image - ImageField - VARCHAR',
                 'nullable13': true,
                 'max_length13': 100,
-                'upload_to13': 'images'
+                'upload_to13': 'images',
+                'fieldName14': 'the_url',
+                'fieldType14': 'URL - URLField - VARCHAR',
+                'nullable14': false,
+                'max_length14': 200,
+
             });
             this.wagerApp.on('end', function() {
                 // Now run the second generator

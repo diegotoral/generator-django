@@ -15,7 +15,7 @@ class Wager(django.db.models.Model):
     amount = django.db.models.DecimalField(max_digits=6, decimal_places=3)
     pdf = django.db.models.FileField(max_length=199, upload_to='folder')
     ad = django.db.models.ImageField(null=True, max_length=100, upload_to='images')
-
+    the_url = django.db.models.URLField(max_length=200)
     def __unicode__(self):
         return self.title
 
